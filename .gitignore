@@ -1,3 +1,8 @@
+# outputted opt runs (for testing usually)
+boa_runs*
+moo_runs*
+*20*T*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
