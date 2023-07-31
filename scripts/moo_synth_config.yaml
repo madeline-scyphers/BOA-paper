@@ -1,0 +1,82 @@
+# MultiObjective Optimization config
+optimization_options:
+    objective_options:
+        objective_thresholds:
+            - 0 >= -1.1
+            - 1 >= -1.1
+            - 2 >= -1.1
+            - 3 >= -1.1
+            - 4 >= -1.1
+            - 5 >= -1.1
+        objectives:
+            - name: 0
+              lower_is_better: False
+              noise_sd: 0
+            - name: 1
+              lower_is_better: False
+              noise_sd: 0
+            - name: 2
+              lower_is_better: False
+              noise_sd: 0
+            - name: 3
+              lower_is_better: False
+              noise_sd: 0
+            - name: 4
+              lower_is_better: False
+              noise_sd: 0
+            - name: 5
+              lower_is_better: False
+              noise_sd: 0
+#            - name: 6
+#              lower_is_better: False
+#              noise_sd: 0
+#            - name: 7
+#              lower_is_better: False
+#              noise_sd: 0
+#            - name: 8
+#              lower_i8s_better: False
+#              noise_sd: 0
+#            - name: 9
+#              lower_is_better: False
+#              noise_sd: 0
+#            - name: 10
+#              lower_is_better: False
+#              noise_sd: 0
+
+    experiment:
+        name: "moo_run"
+    trials: 1
+
+parameters:
+    x0:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    x1:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    x2:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    x3:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    x4:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    x5:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    x6:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    x7:
+        type: range
+        bounds: [0, 1]
+        value_type: float

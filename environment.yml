@@ -1,0 +1,8 @@
+name: boa
+channels:
+- pytorch
+- conda-forge
+dependencies:
+- pytorch
+- boa-framework
+
