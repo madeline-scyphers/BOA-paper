@@ -1,4 +1,5 @@
 import boa
+import pathlib
 import torch
 from botorch.test_functions.multi_objective import DTLZ2
 
@@ -22,3 +23,15 @@ class Wrapper(boa.BaseWrapper):
     def fetch_trial_data(self, trial, metric_properties, metric_name, *args, **kwargs):
         evaluation = problem(torch.tensor(*trial.arm.parameters.values()))
         return {i: float(obj) for i, obj in enumerate(evaluation)}
+
+
+def main():
+    config_path = pathlib.Path(__file__).resolve().parent / "config.yaml"
+    wrapper = Wrapper(config_path=config_path)
+    controller = boa.Controller(wrapper=wrapper)
+    controller.initialize_scheduler()
+    return controller.run()
+
+
+if __name__ == "__main__":
+    main()
