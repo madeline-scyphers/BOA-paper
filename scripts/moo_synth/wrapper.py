@@ -21,7 +21,7 @@ class Wrapper(boa.BaseWrapper):
         trial.mark_completed()
 
     def fetch_trial_data(self, trial, metric_properties, metric_name, *args, **kwargs):
-        evaluation = problem(torch.tensor(*trial.arm.parameters.values()))
+        evaluation = problem(torch.tensor(list(trial.arm.parameters.values())))
         return {i: float(obj) for i, obj in enumerate(evaluation)}
 
 
