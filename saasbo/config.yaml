@@ -1,0 +1,33 @@
+objective:
+    metrics:
+        # List all of your metrics here,
+        # only list 1 metric for a single objective optimization
+        -   metric: branin
+            metric_type: synthetic_metric
+            noise_sd: 0.0
+            param_names: ["x19", "x44"]
+            minimize: true
+
+parameters:
+    {% for i in range(25) %}
+    x{{ i }}:
+        type: range
+        bounds: [-5, 10]
+        value_type: float
+    {% endfor %}
+    {% for i in range(25) %}
+    x{{ i + 25 }}:
+        type: range
+        bounds: [0, 15]
+        value_type: float
+    {% endfor %}
+
+scheduler:
+    total_trials: 30
+
+generation_strategy:
+    use_saasbo: true
+
+script_options:
+    wrapper_name: WrapperSaasbo
+    exp_name: saasbo_run
