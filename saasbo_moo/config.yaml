@@ -1,0 +1,32 @@
+{% set dim = 10 %}
+{% set init_trials = 2 * (dim + 1) %}
+{% set n_trials = init_trials + 40 %}
+
+objective:
+    metrics:
+        -   name: a
+            minimize: false
+        -   name: b
+            minimize: false
+    objective_thresholds:
+        - a >= -1.1
+        - b >= -1.1
+
+parameters:
+    {% for i in range(dim) %}
+    x{{ i }}:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    {% endfor %}
+
+scheduler:
+    n_trials: {{ n_trials }}
+
+generation_strategy:
+    use_saasbo: true
+    num_initialization_trials: {{ init_trials }}
+
+script_options:
+    wrapper_name: WrapperSaasboMoo
+    exp_name: saasbo_run
