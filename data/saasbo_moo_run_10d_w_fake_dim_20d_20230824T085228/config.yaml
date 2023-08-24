@@ -1,0 +1,49 @@
+{% set n_obj = 2 %}
+{% set n_dim = 10 %}
+{% set n_fake_dim = 20 %}
+
+{% set init_trials = 4 * (n_dim + 1) %}
+{% set n_trials = init_trials + 200 %}
+
+objective:
+    metrics:
+      {% for i in range(n_obj) %}
+        -   name: obj{{ i }}
+            minimize: false
+            param_names:
+              {% for j in range(n_dim) %}
+                - x{{ j }}
+              {% endfor %}
+      {% endfor %}
+    objective_thresholds:
+      {% for i in range(n_obj) %}
+        - obj{{ i }} >= -1.1
+      {% endfor %}
+
+parameters:
+    {% for i in range(n_dim) %}
+    x{{ i }}:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    {% endfor %}
+    {% for i in range(n_fake_dim) %}
+    x{{ i + n_dim}}:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    {% endfor %}
+
+scheduler:
+    n_trials: {{ n_trials }}
+#    global_stopping_strategy:
+#        type: ImprovementGlobalStoppingStrategy
+#        min_trials: 10
+
+generation_strategy:
+    use_saasbo: true
+    num_initialization_trials: {{ init_trials }}
+
+script_options:
+    wrapper_name: WrapperSaasboMoo
+    exp_name: saasbo_run_{{ n_dim }}d_w_fake_dim_{{ n_fake_dim }}d
