@@ -2,7 +2,7 @@
 {% set n_dim = 10 %}
 {% set n_fake_dim = 20 %}
 
-{% set init_trials = 4 * (n_dim + 1) %}
+{% set init_trials = 2 * (n_dim + 1) %}
 {% set n_trials = init_trials + 200 %}
 
 objective:
