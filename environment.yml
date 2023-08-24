@@ -4,4 +4,4 @@ channels:
 - conda-forge
 dependencies:
 - python=3.10
-- boa-framework==0.9.4
+- boa-framework==0.9.5
