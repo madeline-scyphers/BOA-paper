@@ -19,6 +19,7 @@ import boa.plotting
 from boa.plotting import app_view, _maybe_load_scheduler, plot_metrics_trace, plot_slice, plot_contours, scheduler_to_df
 
 from pareto import plot_pareto
+from hypervolume import plot_hypervolume
 
 
 @click.command(
@@ -40,13 +41,16 @@ def main(scheduler_path):
     scheduler = _maybe_load_scheduler(scheduler_path)
     view = pn.Column()
     if scheduler.experiment.is_moo_problem:
-        pareto = plot_pareto(scheduler_path)
+        moo_plots = pn.Row(
+            plot_pareto(scheduler),
+            plot_hypervolume(scheduler),
+        )
+
     else:
-        pareto = None
-    row1 = pn.Row(plot_metrics_trace(schedulers=scheduler))
-    if pareto:
-        row1.append(pareto)
-    view.append(row1)
+        moo_plots = None
+    view.append(pn.Row(plot_metrics_trace(schedulers=scheduler)))
+    if moo_plots:
+        view.append(moo_plots)
     view.append(plot_slice(scheduler=scheduler))
     view.append(plot_contours(scheduler=scheduler))
     view.append(scheduler_to_df(scheduler))
