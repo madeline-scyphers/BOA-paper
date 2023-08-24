@@ -11,7 +11,7 @@ from boa.plotting import _maybe_load_scheduler, SchedulerOrPath
 pn.extension('plotly')
 
 
-def plot_hypervolume(scheduler: SchedulerOrPath):
+def plot_hypervolume(scheduler: SchedulerOrPath, max_hypervolume: float = None):
     scheduler = _maybe_load_scheduler(scheduler)
     experiment = scheduler.experiment
     model = scheduler.generation_strategy.model
@@ -28,6 +28,11 @@ def plot_hypervolume(scheduler: SchedulerOrPath):
             modelbridge=dummy_model,
             objective_thresholds=experiment.optimization_config.objective_thresholds or model.infer_objective_thresholds
         ))
-    log_hv = np.asarray(hvs)
-    fig = px.line(x=np.arange(len(hvs)), y=log_hv, title='HyperVolume')
+    if max_hypervolume is not None:
+        hv = max_hypervolume - np.asarray(hvs)
+        title = "Hypervolume Difference"
+    else:
+        hv = np.asarray(hvs)
+        title = "Observed Hypervolume"
+    fig = px.line(x=np.arange(len(hvs)), y=hv, title=title)
     return pn.pane.Plotly(fig)

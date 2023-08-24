@@ -32,7 +32,13 @@ from hypervolume import plot_hypervolume
     default="",
     help="Path to scheduler json file.",
 )
-def main(scheduler_path):
+@click.option(
+    "-mhv",
+    "--max-hypervolume",
+    type=float,
+    help="Maximum hypervolume value to be plotted against.",
+)
+def main(scheduler_path, max_hypervolume):
     """
     Launch a basic EDA plot view of your optimization.
     Creating a web app with the scheduler json file.
@@ -43,7 +49,7 @@ def main(scheduler_path):
     if scheduler.experiment.is_moo_problem:
         moo_plots = pn.Row(
             plot_pareto(scheduler),
-            plot_hypervolume(scheduler),
+            plot_hypervolume(scheduler, max_hypervolume=max_hypervolume)
         )
 
     else:
