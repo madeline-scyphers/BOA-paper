@@ -14,7 +14,7 @@ pn.extension('plotly')
 def plot_hypervolume(scheduler: SchedulerOrPath, max_hypervolume: float = None):
     scheduler = _maybe_load_scheduler(scheduler)
     experiment = scheduler.experiment
-    model = scheduler.generation_strategy.model
+    model = scheduler.model
 
     hvs = []
     for i in range(1, len(experiment.trials_by_status[TrialStatus.COMPLETED]) + 1):

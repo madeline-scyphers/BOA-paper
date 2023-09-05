@@ -16,14 +16,15 @@ import click
 import panel as pn
 
 import boa.plotting
-from boa.plotting import app_view, _maybe_load_scheduler, plot_metrics_trace, plot_slice, plot_contours, scheduler_to_df
+from boa.plotting import _maybe_load_scheduler, plot_metrics_trace, plot_slice, plot_contours, scheduler_to_df
 
 from pareto import plot_pareto
 from hypervolume import plot_hypervolume
+from feature_importance import plot_feature_importance, plot_feature_importance2
 
 
 @click.command(
-    epilog=f"Name of Plots to be added here: {', '.join(plot for plot in boa.plotting.__all__ if plot != 'app_view')}"
+    epilog=f"Name of Plots to be added here: {', '.join(plot for plot in boa.plotting.__all__ if plot != 'get_plots')}"
 )
 @click.option(
     "-sp",
@@ -58,6 +59,8 @@ def main(scheduler_path, max_hypervolume):
     if moo_plots:
         view.append(moo_plots)
     view.append(plot_slice(scheduler=scheduler))
+    view.append(plot_feature_importance(scheduler=scheduler))
+    view.append(plot_feature_importance2(scheduler=scheduler))
     view.append(plot_contours(scheduler=scheduler))
     view.append(scheduler_to_df(scheduler))
 
