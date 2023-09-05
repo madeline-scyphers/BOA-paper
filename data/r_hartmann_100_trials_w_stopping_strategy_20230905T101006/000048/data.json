@@ -1,0 +1,225 @@
+{
+    "parameters": {
+        "x0": 0.7866731146350503,
+        "x1": 0.20710961055010557,
+        "x2": 0.6107095060870051,
+        "x3": 0.26324793696403503,
+        "x4": 0.6312013827264309,
+        "x5": 0.32712196465581656
+    },
+    "trial": {
+        "__type": "Trial",
+        "index": 48,
+        "trial_type": null,
+        "ttl_seconds": null,
+        "status": {
+            "__type": "TrialStatus",
+            "name": "CANDIDATE"
+        },
+        "time_created": {
+            "__type": "datetime",
+            "value": "2023-09-05 10:11:50.997102"
+        },
+        "time_completed": null,
+        "time_staged": null,
+        "time_run_started": null,
+        "abandoned_reason": null,
+        "run_metadata": {},
+        "stop_metadata": {},
+        "generator_run": {
+            "__type": "GeneratorRun",
+            "arms": [
+                {
+                    "__type": "Arm",
+                    "parameters": {
+                        "x0": 0.7866731146350503,
+                        "x1": 0.20710961055010557,
+                        "x2": 0.6107095060870051,
+                        "x3": 0.26324793696403503,
+                        "x4": 0.6312013827264309,
+                        "x5": 0.32712196465581656
+                    },
+                    "name": "48_0"
+                }
+            ],
+            "weights": [
+                1.0
+            ],
+            "optimization_config": null,
+            "search_space": null,
+            "time_created": {
+                "__type": "datetime",
+                "value": "2023-09-05 10:11:50.997046"
+            },
+            "model_predictions": [
+                {
+                    "Hartmann6": [
+                        -0.4818688957877253
+                    ]
+                },
+                {
+                    "Hartmann6": {
+                        "Hartmann6": [
+                            0.237901787181237
+                        ]
+                    }
+                }
+            ],
+            "best_arm_predictions": [
+                {
+                    "__type": "Arm",
+                    "parameters": {
+                        "x0": 0.19519787435743802,
+                        "x1": 0.1569157570786509,
+                        "x2": 0.4841680376949423,
+                        "x3": 0.2680801927472158,
+                        "x4": 0.31269615136244217,
+                        "x5": 0.660678260622951
+                    },
+                    "name": "44_0"
+                },
+                [
+                    {
+                        "Hartmann6": -3.31909698358693
+                    },
+                    {
+                        "Hartmann6": {
+                            "Hartmann6": 1.3650761518748049e-06
+                        }
+                    }
+                ]
+            ],
+            "generator_run_type": null,
+            "index": 0,
+            "fit_time": 0.05223395900975447,
+            "gen_time": 0.4995462919905549,
+            "model_key": "GPEI",
+            "model_kwargs": {
+                "model_constructor": {
+                    "is_callable_as_path": true,
+                    "value": "ax.models.torch.botorch_defaults.get_and_fit_model"
+                },
+                "model_predictor": {
+                    "is_callable_as_path": true,
+                    "value": "ax.models.torch.utils.predict_from_model"
+                },
+                "acqf_constructor": {
+                    "is_callable_as_path": true,
+                    "value": "ax.models.torch.botorch_defaults.get_NEI"
+                },
+                "acqf_optimizer": {
+                    "is_callable_as_path": true,
+                    "value": "ax.models.torch.botorch_defaults.scipy_optimizer"
+                },
+                "best_point_recommender": {
+                    "is_callable_as_path": true,
+                    "value": "ax.models.torch.botorch_defaults.recommend_best_observed_point"
+                },
+                "refit_on_cv": false,
+                "refit_on_update": true,
+                "warm_start_refitting": true,
+                "use_input_warping": false,
+                "use_loocv_pseudo_likelihood": false,
+                "prior": null
+            },
+            "bridge_kwargs": {
+                "transform_configs": {
+                    "Derelativize": {
+                        "use_raw_status_quo": false
+                    },
+                    "Winsorize": {
+                        "derelativize_with_raw_status_quo": false
+                    }
+                },
+                "torch_dtype": {
+                    "__type": "torch_dtype",
+                    "value": "torch.float64"
+                },
+                "torch_device": null,
+                "status_quo_name": null,
+                "status_quo_features": null,
+                "optimization_config": null,
+                "fit_out_of_design": false,
+                "fit_abandoned": false,
+                "fit_tracking_metrics": true,
+                "fit_on_init": true,
+                "default_model_gen_options": null,
+                "transforms": [
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 16,
+                        "transform_type": "<class 'ax.modelbridge.transforms.winsorize.Winsorize'>"
+                    },
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 9,
+                        "transform_type": "<class 'ax.modelbridge.transforms.remove_fixed.RemoveFixed'>"
+                    },
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 7,
+                        "transform_type": "<class 'ax.modelbridge.transforms.choice_encode.OrderedChoiceEncode'>"
+                    },
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 6,
+                        "transform_type": "<class 'ax.modelbridge.transforms.one_hot.OneHot'>"
+                    },
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 3,
+                        "transform_type": "<class 'ax.modelbridge.transforms.int_to_float.IntToFloat'>"
+                    },
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 5,
+                        "transform_type": "<class 'ax.modelbridge.transforms.log.Log'>"
+                    },
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 20,
+                        "transform_type": "<class 'ax.modelbridge.transforms.logit.Logit'>"
+                    },
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 15,
+                        "transform_type": "<class 'ax.modelbridge.transforms.unit_x.UnitX'>"
+                    },
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 4,
+                        "transform_type": "<class 'ax.modelbridge.transforms.ivw.IVW'>"
+                    },
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 1,
+                        "transform_type": "<class 'ax.modelbridge.transforms.derelativize.Derelativize'>"
+                    },
+                    {
+                        "__type": "Type[Transform]",
+                        "index_in_registry": 11,
+                        "transform_type": "<class 'ax.modelbridge.transforms.standardize_y.StandardizeY'>"
+                    }
+                ]
+            },
+            "gen_metadata": {
+                "expected_acquisition_value": 0.0
+            },
+            "model_state_after_gen": {},
+            "generation_step_index": 1,
+            "candidate_metadata_by_arm_signature": null
+        },
+        "runner": null,
+        "num_arms_created": 1,
+        "generation_step_index": 1,
+        "properties": {}
+    },
+    "trial_index": 48,
+    "trial_dir": "/Users/madelinescyphers/Documents/projs_.nosync/BOA-paper/r_hartmann/r_hartmann_100_trials_w_stopping_strategy_20230905T101006/000048",
+    "filtered_parameters": {
+        "Hartmann6": {}
+    },
+    "param_names": {
+        "Hartmann6": []
+    }
+}
