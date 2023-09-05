@@ -1,0 +1,302 @@
+{
+    "__type": "Trial",
+    "index": 27,
+    "trial_type": null,
+    "ttl_seconds": null,
+    "status": {
+        "__type": "TrialStatus",
+        "name": "CANDIDATE"
+    },
+    "time_created": {
+        "__type": "datetime",
+        "value": "2023-09-04 14:50:32.188456"
+    },
+    "time_completed": null,
+    "time_staged": null,
+    "time_run_started": null,
+    "abandoned_reason": null,
+    "run_metadata": {},
+    "stop_metadata": {},
+    "generator_run": {
+        "__type": "GeneratorRun",
+        "arms": [
+            {
+                "__type": "Arm",
+                "parameters": {
+                    "x0": -5.0,
+                    "x1": 10.0,
+                    "x2": 10.0,
+                    "x3": -5.0,
+                    "x4": 10.0,
+                    "x5": 10.0,
+                    "x6": 10.0,
+                    "x7": -5.0,
+                    "x8": -5.0,
+                    "x9": -5.0,
+                    "x10": 10.0,
+                    "x11": -5.0,
+                    "x12": -5.0,
+                    "x13": 10.0,
+                    "x14": 10.0,
+                    "x15": 10.0,
+                    "x16": -5.0,
+                    "x17": -5.0,
+                    "x18": -5.0,
+                    "x19": -5.0,
+                    "x20": -5.0,
+                    "x21": -5.0,
+                    "x22": -5.0,
+                    "x23": -5.0,
+                    "x24": -5.0,
+                    "x25": 15.0,
+                    "x26": 0.0,
+                    "x27": 15.0,
+                    "x28": 0.0,
+                    "x29": 0.0,
+                    "x30": 0.0,
+                    "x31": 15.0,
+                    "x32": 0.0,
+                    "x33": 0.0,
+                    "x34": 0.0,
+                    "x35": 0.0,
+                    "x36": 15.0,
+                    "x37": 0.0,
+                    "x38": 0.0,
+                    "x39": 0.0,
+                    "x40": 15.0,
+                    "x41": 0.0,
+                    "x42": 15.0,
+                    "x43": 0.0,
+                    "x44": 15.0,
+                    "x45": 0.0,
+                    "x46": 0.0,
+                    "x47": 15.0,
+                    "x48": 0.0,
+                    "x49": 9.849781326109513
+                },
+                "name": "27_0"
+            }
+        ],
+        "weights": [
+            1.0
+        ],
+        "optimization_config": null,
+        "search_space": null,
+        "time_created": {
+            "__type": "datetime",
+            "value": "2023-09-04 14:50:32.188394"
+        },
+        "model_predictions": [
+            {
+                "branin": [
+                    2.8879187225890703
+                ]
+            },
+            {
+                "branin": {
+                    "branin": [
+                        1491.2594179155637
+                    ]
+                }
+            }
+        ],
+        "best_arm_predictions": [
+            {
+                "__type": "Arm",
+                "parameters": {
+                    "x0": 10.0,
+                    "x1": 10.0,
+                    "x2": 10.0,
+                    "x3": -5.0,
+                    "x4": 10.0,
+                    "x5": -5.0,
+                    "x6": -5.0,
+                    "x7": 10.0,
+                    "x8": 10.0,
+                    "x9": 9.273522124855301,
+                    "x10": 10.0,
+                    "x11": -5.0,
+                    "x12": 10.0,
+                    "x13": -5.0,
+                    "x14": 10.0,
+                    "x15": 10.0,
+                    "x16": -5.0,
+                    "x17": 10.0,
+                    "x18": -5.0,
+                    "x19": -5.0,
+                    "x20": 10.0,
+                    "x21": -5.0,
+                    "x22": -5.0,
+                    "x23": -5.0,
+                    "x24": 10.0,
+                    "x25": 0.0,
+                    "x26": 0.0,
+                    "x27": 3.32002044451777,
+                    "x28": 15.0,
+                    "x29": 0.0,
+                    "x30": 15.0,
+                    "x31": 0.0,
+                    "x32": 0.0,
+                    "x33": 0.0,
+                    "x34": 0.0,
+                    "x35": 0.0,
+                    "x36": 0.0,
+                    "x37": 0.0,
+                    "x38": 0.0,
+                    "x39": 0.0,
+                    "x40": 15.0,
+                    "x41": 15.0,
+                    "x42": 0.0,
+                    "x43": 15.0,
+                    "x44": 15.0,
+                    "x45": 0.0,
+                    "x46": 5.424627870882134,
+                    "x47": 0.0,
+                    "x48": 0.0,
+                    "x49": 8.34877626180519
+                },
+                "name": "23_0"
+            },
+            [
+                {
+                    "branin": 2.0436636743197596
+                },
+                {
+                    "branin": {
+                        "branin": 0.002201555351308257
+                    }
+                }
+            ]
+        ],
+        "generator_run_type": null,
+        "index": 0,
+        "fit_time": 0.0,
+        "gen_time": 10.624903750001977,
+        "model_key": "FullyBayesian",
+        "model_kwargs": {
+            "model_constructor": {
+                "is_callable_as_path": true,
+                "value": "ax.models.torch.fully_bayesian.get_and_fit_model_mcmc"
+            },
+            "model_predictor": {
+                "is_callable_as_path": true,
+                "value": "ax.models.torch.fully_bayesian.predict_from_model_mcmc"
+            },
+            "acqf_constructor": {
+                "is_callable_as_path": true,
+                "value": "ax.models.torch.fully_bayesian.get_fully_bayesian_acqf"
+            },
+            "acqf_optimizer": {
+                "is_callable_as_path": true,
+                "value": "ax.models.torch.botorch_defaults.scipy_optimizer"
+            },
+            "best_point_recommender": {
+                "is_callable_as_path": true,
+                "value": "ax.models.torch.botorch_defaults.recommend_best_observed_point"
+            },
+            "refit_on_cv": false,
+            "refit_on_update": true,
+            "warm_start_refitting": true,
+            "use_input_warping": false,
+            "use_saas": null,
+            "num_samples": 256,
+            "warmup_steps": 512,
+            "thinning": 16,
+            "max_tree_depth": 6,
+            "disable_progbar": false,
+            "gp_kernel": "matern",
+            "verbose": true,
+            "jit_compile": false
+        },
+        "bridge_kwargs": {
+            "transform_configs": {
+                "Derelativize": {
+                    "use_raw_status_quo": false
+                },
+                "Winsorize": {
+                    "derelativize_with_raw_status_quo": false
+                }
+            },
+            "torch_dtype": {
+                "__type": "torch_dtype",
+                "value": "torch.float64"
+            },
+            "torch_device": null,
+            "status_quo_name": null,
+            "status_quo_features": null,
+            "optimization_config": null,
+            "fit_out_of_design": false,
+            "fit_abandoned": false,
+            "fit_tracking_metrics": true,
+            "fit_on_init": true,
+            "default_model_gen_options": null,
+            "transforms": [
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 16,
+                    "transform_type": "<class 'ax.modelbridge.transforms.winsorize.Winsorize'>"
+                },
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 9,
+                    "transform_type": "<class 'ax.modelbridge.transforms.remove_fixed.RemoveFixed'>"
+                },
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 7,
+                    "transform_type": "<class 'ax.modelbridge.transforms.choice_encode.OrderedChoiceEncode'>"
+                },
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 6,
+                    "transform_type": "<class 'ax.modelbridge.transforms.one_hot.OneHot'>"
+                },
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 3,
+                    "transform_type": "<class 'ax.modelbridge.transforms.int_to_float.IntToFloat'>"
+                },
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 5,
+                    "transform_type": "<class 'ax.modelbridge.transforms.log.Log'>"
+                },
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 20,
+                    "transform_type": "<class 'ax.modelbridge.transforms.logit.Logit'>"
+                },
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 15,
+                    "transform_type": "<class 'ax.modelbridge.transforms.unit_x.UnitX'>"
+                },
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 4,
+                    "transform_type": "<class 'ax.modelbridge.transforms.ivw.IVW'>"
+                },
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 1,
+                    "transform_type": "<class 'ax.modelbridge.transforms.derelativize.Derelativize'>"
+                },
+                {
+                    "__type": "Type[Transform]",
+                    "index_in_registry": 11,
+                    "transform_type": "<class 'ax.modelbridge.transforms.standardize_y.StandardizeY'>"
+                }
+            ]
+        },
+        "gen_metadata": {
+            "expected_acquisition_value": 0.4672607610880577
+        },
+        "model_state_after_gen": {},
+        "generation_step_index": 1,
+        "candidate_metadata_by_arm_signature": null
+    },
+    "runner": null,
+    "num_arms_created": 1,
+    "generation_step_index": 1,
+    "properties": {}
+}

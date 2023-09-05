@@ -1,4 +1,4 @@
-{% set n_dim_per_domain = 10 %}
+{% set n_dim_per_domain = 25 %}
 {% set init_trials = 10 %}
 {% set n_trials = init_trials + 40 %}
 
@@ -34,5 +34,4 @@ generation_strategy:
     num_initialization_trials: {{ init_trials }}
 
 script_options:
-    wrapper_name: WrapperSaasbo
-    exp_name: saasbo_run
+    run_model: Rscript run_model.R
