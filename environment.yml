@@ -4,4 +4,8 @@ channels:
 - conda-forge
 dependencies:
 - python=3.10
-- boa-framework==0.9.5
+- boa-framework==0.9.7
+
+# Aux Languages
+- r
+- r-jsonlite
