@@ -59,8 +59,8 @@ def main(scheduler_path, max_hypervolume):
     if moo_plots:
         view.append(moo_plots)
     view.append(plot_slice(scheduler=scheduler))
-    view.append(plot_feature_importance(scheduler=scheduler))
-    view.append(plot_feature_importance2(scheduler=scheduler))
+    # view.append(plot_feature_importance(scheduler=scheduler))
+    # view.append(plot_feature_importance2(scheduler=scheduler))
     view.append(plot_contours(scheduler=scheduler))
     view.append(scheduler_to_df(scheduler))
 
