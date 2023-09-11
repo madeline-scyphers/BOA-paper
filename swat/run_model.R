@@ -1,4 +1,5 @@
-# Run create_demo.R first to create a SWAT+ demo project in the current directory.
+# Run Rscript setup.R first in this directory to create a SWAT+ demo project in the current directory
+# (linux tested, does not run on Mac, SWATrunR says it runs with Windows, so probably Windows is ok)
 
 # load in any libraries and modules we need
 library(SWATrunR)
