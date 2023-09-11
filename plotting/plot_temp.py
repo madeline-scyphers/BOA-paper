@@ -20,7 +20,7 @@ from boa.plotting import _maybe_load_scheduler, plot_metrics_trace, plot_slice, 
 
 from pareto import plot_pareto
 from hypervolume import plot_hypervolume
-from feature_importance import plot_feature_importance, plot_feature_importance2
+# from feature_importance import plot_feature_importance, plot_feature_importance2
 
 
 @click.command(
