@@ -9,3 +9,16 @@ dependencies:
 # Aux Languages
 - r
 - r-jsonlite
+- r-base<4.3.1
+- r-devtools
+- r-data.table
+- r-here
+#############################
+# Install SWAT dependencies #
+#   Windows and Linux Only  #
+#############################
+  # when environment is solved, enter R terminal and run::
+  # devtools::install_github("chrisschuerz/SWATdata")
+  # devtools::install_github("chrisschuerz/SWATrunR")
+  # from inside swat folder run::
+  # Rsript setup.R
