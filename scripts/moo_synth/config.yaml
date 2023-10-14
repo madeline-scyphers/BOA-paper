@@ -44,8 +44,8 @@ optimization_options:
 #              noise_sd: 0
 
     experiment:
-        name: "moo_run"
-    trials: 1
+        name: "moo_synth"
+    trials: 1000
 
 parameters:
     x0:
