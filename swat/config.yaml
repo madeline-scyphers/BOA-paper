@@ -1,25 +1,76 @@
 objective:
     metrics:
         - name: flo_out
+          metric: RMSE
+          weight: 1
+        - name: totp
+          metric: RMSE
+          weight: 1
+        - name: solp_out
+          metric: RMSE
+          weight: 1
+        - name: sed_out
+          metric: RMSE
+          weight: 1
 parameters:
-    lat_ttime:
+    start_date:
+        type: fixed
+        value: "2015-01-01"
+    end_date:
+        type: fixed
+        value: "2016-01-01"
+
+    # erod_fact.cha:
+    #     type: range
+    #     bounds: [0, 1]
+    #     value_type: float
+    pperco.bsn:
+        type: range
+        bounds: [10, 17.5]
+        value_type: float
+    cn3_swf.hru:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    perco.hru:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    snofall_tmp.hru:
+        type: range
+        bounds: [-5, 5]
+        value_type: float
+    snomelt_tmp.hru:
+        type: range
+        bounds: [-5, 5]
+        value_type: float
+    snomelt_max.hru:
         type: range
         bounds: [0, 10]
         value_type: float
-    epco:
+    snomelt_min.hru:
+        type: range
+        bounds: [0, 10]
+        value_type: float
+    epco.hru:
         type: range
         bounds: [0, 1]
         value_type: float
-    esco:
+    esco.hru:
         type: range
         bounds: [0, 1]
         value_type: float
-    alpha:
+    alpha.aqu:
         type: range
         bounds: [0, 1]
         value_type: float
+# scheduler:
+    # n_trials: 1
 scheduler:
-    n_trials: 15
+    n_trials: 195
+generation_strategy:
+    num_initialization_trials: 52
+    max_parallelism_override: 13
 script_options:
     run_model: Rscript run_model.R
     exp_name: swat_plus_demo

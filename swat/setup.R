@@ -4,5 +4,5 @@ library(here)
 
 # Loading a SWAT+ demo project
 path_plus <- load_demo(dataset = 'project',
-                       path = here(),
+                       path = here("swat"),
                        version = 'plus')

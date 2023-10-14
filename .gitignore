@@ -3,6 +3,7 @@ boa_runs*
 moo_runs*
 *20*T*
 !data/*
+*.log
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

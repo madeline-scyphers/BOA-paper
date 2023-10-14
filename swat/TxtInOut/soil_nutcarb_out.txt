@@ -1,0 +1,3 @@
+ ParallelLakes_decHRUfixDE SWAT+ Jun 13 2022    MODULAR Rev 2020.60.5.5                                   
+         jday         mon         day          yr         hru      gis_id      name           soil_mn         soil_mp       soil_orgc       soil_orgn       soil_orgp         pl_orgc         pl_orgn         pl_orgp        res_orgc        res_orgn        res_orgp
+                                                                                                kg/ha           kg/ha           kg/ha           kg/ha           kg/ha           kg/ha           kg/ha           kg/ha           kg/ha           kg/ha           kg/ha
