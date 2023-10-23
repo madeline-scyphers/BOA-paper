@@ -2,16 +2,16 @@ objective:
     metrics:
         - name: flo_out
           metric: RMSE
-          weight: 1
-        - name: totp
-          metric: RMSE
-          weight: 1
-        - name: solp_out
-          metric: RMSE
-          weight: 1
-        - name: sed_out
-          metric: RMSE
-          weight: 1
+        #   weight: 1
+        # - name: totp
+        #   metric: RMSE
+        #   weight: 1
+        # - name: solp_out
+        #   metric: RMSE
+        #   weight: 1
+        # - name: sed_out
+        #   metric: RMSE
+        #   weight: 1
 parameters:
     start_date:
         type: fixed
@@ -65,7 +65,7 @@ parameters:
         bounds: [0, 1]
         value_type: float
 # scheduler:
-    # n_trials: 1
+#     n_trials: 1
 scheduler:
     n_trials: 195
 generation_strategy:
