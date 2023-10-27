@@ -1,0 +1,44 @@
+{% set pathlib = load_py("pathlib") %}
+{% set builtins = load_py("builtins") %}
+{% set cal_params_f = pathlib.Path("/users/PAS0409/madelinescyphers/BOA-paper/swat/TxtInOut/cal_parms.cal") %}
+objective:
+    metrics:
+        -   name: flo_out_NSE
+            minimize: False
+
+parameters:
+    start_date:
+        type: fixed
+        value: "2008-01-01"
+    end_date:
+        type: fixed
+        value: "2018-01-01"
+    years_skip:
+        type: fixed
+        value: 5
+    {% set f = builtins.open(cal_params_f) -%}
+    {% for line in f -%}
+    {% if loop.index0 >= 3 -%}
+    {% set name1, name2, abs_min, abs_max, unit = line.split() %}
+    {{ name1 }}.{{ name2 }}:
+        type: range
+        bounds: [{{ abs_min }}, {{ abs_max }}]
+        value_type: float
+    {%- endif %}
+    {%- endfor %}
+    {% do f.close() %}
+
+
+# scheduler:
+#     n_trials: 1
+scheduler:
+    n_trials: 650
+    max_pending_trials: 20
+    run_trials_in_batches: true
+generation_strategy:
+    num_initialization_trials: 20
+    max_parallelism_override: 20
+    use_saasbo: true
+script_options:
+    run_model: Rscript run_model.R
+    exp_name: swat_plus_auto_saasbo
