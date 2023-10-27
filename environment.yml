@@ -13,6 +13,7 @@ dependencies:
 - r-devtools
 - r-data.table
 - r-here
+- r-hydroGOF
 #############################
 # Install SWAT dependencies #
 #   Windows and Linux Only  #
