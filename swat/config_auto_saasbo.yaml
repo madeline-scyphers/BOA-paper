@@ -28,17 +28,14 @@ parameters:
     {%- endfor %}
     {% do f.close() %}
 
-
-# scheduler:
-#     n_trials: 1
 scheduler:
-    n_trials: 650
-    max_pending_trials: 20
+    n_trials: 1000
+    max_pending_trials: 25
     run_trials_in_batches: true
 generation_strategy:
-    num_initialization_trials: 20
-    max_parallelism_override: 20
+    num_initialization_trials: 100
+    max_parallelism_override: 25
     use_saasbo: true
 script_options:
-    run_model: Rscript run_model.R
-    exp_name: swat_plus_auto_saasbo
+    run_model: sbatch slurm_launch_run_model.sh
+    exp_name: swat_plus_slurm_auto_saasbo
