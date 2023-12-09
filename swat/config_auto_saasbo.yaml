@@ -29,7 +29,7 @@ parameters:
     {% do f.close() %}
 
 scheduler:
-    n_trials: 1000
+    n_trials: 500
     max_pending_trials: 25
     run_trials_in_batches: true
 generation_strategy:
@@ -37,5 +37,5 @@ generation_strategy:
     max_parallelism_override: 25
     use_saasbo: true
 script_options:
-    run_model: sbatch slurm_launch_run_model.sh
-    exp_name: swat_plus_slurm_auto_saasbo
+    run_model: sbatch --time=3:00:00 slurm_launch_run_model.sh
+    exp_name: swat_plus_slurm_auto_saasboZ

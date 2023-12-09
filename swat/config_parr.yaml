@@ -1,0 +1,66 @@
+{% set pathlib = load_py("pathlib") %}
+{% set builtins = load_py("builtins") %}
+{% set cal_params_f = pathlib.Path("/users/PAS0409/madelinescyphers/BOA-paper/swat/TxtInOut/cal_parms.cal") %}
+{% set max_parr = 25 %}
+
+objective:
+    metrics:
+        -   name: flo_out_NSE
+            minimize: False
+
+parameters:
+    start_date: "2013-01-01"
+    end_date: "2018-01-01"
+    years_skip: 0
+    cn3_swf.hru:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    esco.hru:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    epco.hru:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    perco.hru:
+        type: range
+        bounds: [0, 1]
+        value_type: float
+    snofall_tmp.hru:
+        type: range
+        bounds: [-5, 5]
+        value_type: float
+    snomelt_tmp.hru:
+        type: range
+        bounds: [-5, 5]
+        value_type: float
+    snomelt_max.hru:
+        type: range
+        bounds: [0, 10]
+        value_type: float
+    snomelt_min.hru:
+        type: range
+        bounds: [0, 10]
+        value_type: float
+
+parameter_constraints:
+    - snomelt_min.hru <= snomelt_max.hru
+    - snofall_tmp.hru <= snomelt_tmp.hru
+
+scheduler:
+    total_trials: 200
+    max_pending_trials: {{ max_parr }}
+    run_trials_in_batches: true
+generation_strategy:
+    steps:
+        -   model: SOBOL
+            num_trials: 50
+            max_parallelism: {{ max_parr }}
+        -   model: GPEI
+            num_trials: -1
+            max_parallelism: {{ max_parr }}
+script_options:
+    run_model: sbatch --time=3:00:00 --output={{ trial_dir }}/%j.log slurm_launch_run_model.sh
+    exp_name: swat_plus_{{ max_parr }}_parr_200_trials
