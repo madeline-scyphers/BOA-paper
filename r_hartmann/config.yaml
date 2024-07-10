@@ -1,4 +1,4 @@
-{% set n_trials = 100 %}
+{% set n_trials = 10 %}
 objective:
     metrics:
         - name: Hartmann6
@@ -11,10 +11,6 @@ parameters:
     {% endfor %}
 scheduler:
     n_trials: {{ n_trials }}
-    global_stopping_strategy:
-        type: ImprovementGlobalStoppingStrategy
-        min_trials: {{ n_trials // 4 }}
-        window_size: {{ n_trials // 4 }}
 script_options:
     run_model: Rscript run_model.R
-    exp_name: {{ config_dir_name }}_{{ n_trials }}_trials_w_stopping_strategy
+    exp_name: {{ config_dir_name }}_{{ n_trials }}_trials

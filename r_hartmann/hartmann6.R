@@ -1,4 +1,4 @@
-hartman6 <- function(X) {
+hartmann6 <- function(X) {
      out <- tryCatch(
      {
           alpha <- c(1.0, 1.2, 3.0, 3.2)
