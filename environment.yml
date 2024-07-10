@@ -4,7 +4,7 @@ channels:
 - conda-forge
 dependencies:
 - python=3.10
-- boa-framework==0.10.2
+- boa-framework==0.10.3
 
 # Aux Languages
 - r
