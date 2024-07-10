@@ -1,0 +1,25 @@
+objective:
+    metrics:
+        # List all of your metrics
+        -   metric: branin
+            metric_type: synthetic_metric
+            minimize: true
+
+# List all parameters
+parameters:
+    x0:
+        type: range
+        bounds: [-5, 10]
+        value_type: float
+    x1:
+        type: range
+        bounds: [0, 15]
+        value_type: float
+
+# number of trials and other general run settings
+scheduler:
+    n_trials: 15
+
+# Which script to run and what to write files out as
+script_options:
+    run_model: Rscript run_model.R
