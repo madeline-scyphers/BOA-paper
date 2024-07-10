@@ -1,6 +1,3 @@
-{% set pathlib = load_py("pathlib") %}
-{% set builtins = load_py("builtins") %}
-{% set cal_params_f = pathlib.Path("/users/PAS0409/madelinescyphers/BOA-paper/swat/TxtInOut/cal_parms.cal") %}
 {% set max_parr = 25 %}
 
 objective:

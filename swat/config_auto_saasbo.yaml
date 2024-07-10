@@ -38,4 +38,4 @@ generation_strategy:
     use_saasbo: true
 script_options:
     run_model: sbatch --time=3:00:00 slurm_launch_run_model.sh
-    exp_name: swat_plus_slurm_auto_saasboZ
+    exp_name: swat_plus_slurm_auto_saasbo

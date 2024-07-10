@@ -43,12 +43,8 @@ flow_sim <- sim$simulation$flo_out %>% filter(date %in% flow_obs$date)
 
 # NSE (Nash–Sutcliffe model efficiency coefficient)
 nse <- NSE(sim=flow_sim$run_1, obs=flow_obs$value)
-if (!is.null(nse)) {
 
-    jsn <- toJSON(list(
-        flo_out_NSE=nse
-    ), pretty = TRUE)
-    write(jsn, file.path(trial_dir, "output.json"))
-} else {
-    write(toJSON(list(trial_status=unbox("FAILED"))), file.path(trial_dir, "output.json"))
-}
+jsn <- toJSON(list(
+    flo_out_NSE=nse
+), pretty = TRUE)
+write(jsn, file.path(trial_dir, "output.json"))
