@@ -1,4 +1,4 @@
-name: boa
+name: boa-paper
 channels:
 - pytorch
 - conda-forge

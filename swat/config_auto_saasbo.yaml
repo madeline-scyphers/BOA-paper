@@ -1,6 +1,6 @@
 {% set pathlib = load_py("pathlib") %}
 {% set builtins = load_py("builtins") %}
-{% set cal_params_f = pathlib.Path("/users/PAS0409/madelinescyphers/BOA-paper/swat/TxtInOut/cal_parms.cal") %}
+{% set cal_params_f = pathlib.Path("./TxtInOut/cal_parms.cal") %}
 objective:
     metrics:
         -   name: flo_out_NSE

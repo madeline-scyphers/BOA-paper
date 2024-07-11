@@ -18,5 +18,5 @@ install  BOA from the environment.yml file and then follow the instructions in f
 ## Run Optimization
 
 ```bash
-python -m boa -c {any of the configuration files in this directory}
+python -m boa -c {any of the configuration files in this repository}
 ```
