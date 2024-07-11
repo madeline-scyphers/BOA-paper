@@ -1,0 +1,26 @@
+name: boa-paper
+channels:
+- pytorch
+- conda-forge
+dependencies:
+- python=3.10
+- boa-framework==0.10.3
+
+- sphinx>=6
+- pydata-sphinx-theme>=0.13.0  # pydata 0.12 has a flyout menu bug
+
+# Aux Languages
+- r
+- r-jsonlite
+- r-base<4.3.1
+- r-devtools
+- r-data.table
+- r-here
+- r-hydroGOF
+#############################
+# Install SWAT dependencies #
+#   Doesn't work on Mac     #
+#############################
+  # when environment is solved, enter R terminal and run::
+  # devtools::install_github("chrisschuerz/SWATdata")
+  # devtools::install_github("chrisschuerz/SWATrunR")
