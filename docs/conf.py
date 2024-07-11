@@ -31,15 +31,25 @@ author = 'Madeline Scyphers'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.todo',
-    'sphinx.ext.coverage',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.autosectionlabel',
-    'm2r2'
+    "sphinx.ext.autodoc",
+    "sphinx.ext.todo",
+    "sphinx.ext.coverage",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.autosectionlabel",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.viewcode",
+    "myst_nb",
 ]
+
+
+nb_execution_mode = "force"
+
+nb_execution_timeout = 60 * 15
+nb_execution_raise_on_error = True
+nb_execution_show_tb = True
+nb_number_source_lines = True
+nb_render_markdown_format = "myst"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
