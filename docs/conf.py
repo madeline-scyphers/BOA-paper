@@ -72,7 +72,7 @@ autodoc_inherit_docstrings = True  # If no docstring, inherit from base class
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+# html_static_path = ['_static']
 
 html_theme_options = {
     "icon_links": [
@@ -80,12 +80,13 @@ html_theme_options = {
             # Label for this link
             "name": "GitHub",
             # URL where the link will redirect
-            "url": "https://github.com/madeline-scyphers/optiwrap",  # required
+            "url": "https://github.com/madeline-scyphers/boa-PAPER",  # required
             # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
             "icon": "fab fa-github-square",
             # Whether icon should be a FontAwesome class, or a local file
         }
-   ]
+    ],
+    "show_nav_level": 2,
 }
 
 
