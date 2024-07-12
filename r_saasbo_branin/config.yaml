@@ -1,6 +1,6 @@
 {% set n_dim_per_domain = 50 %}
-{% set init_trials = 10 %}
-{% set n_trials = init_trials + 40 %}
+{% set init_trials = 3 %}
+{% set n_trials = init_trials + 6 %}
 
 objective:
     metrics:
