@@ -6,6 +6,7 @@ build:
     python: "mambaforge-latest"
   jobs:
     post_install:
+      - Rscript install_github_r_deps.R
       - conda list
 
 conda:
