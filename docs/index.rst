@@ -18,3 +18,4 @@ Examples
     :maxdepth: 2
 
     swat_plus
+    fetch

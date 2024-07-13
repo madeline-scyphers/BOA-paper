@@ -20,5 +20,5 @@ Install FETCH3.14 in this directory and run the following command to install the
 ## Run Optimization
 
 ```bash
-python -m boa -c boa_moo_2_obj_norm_2015_scale.yml
+python -m boa -c boa_moo_2_obj_norm_2015_scale.yaml
 ```
