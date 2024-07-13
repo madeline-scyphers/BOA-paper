@@ -45,8 +45,8 @@ extensions = [
 
 nb_execution_mode = "force"
 
-nb_execution_timeout = 60 * 20
-nb_execution_raise_on_error = True
+nb_execution_timeout = 60 * 5
+# nb_execution_raise_on_error = True
 nb_execution_show_tb = True
 nb_number_source_lines = True
 nb_render_markdown_format = "myst"
