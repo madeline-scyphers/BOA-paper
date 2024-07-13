@@ -45,6 +45,10 @@ extensions = [
 
 nb_execution_mode = "force"
 
+nb_execution_excludepatterns = [  # cached notebooks
+    "swat_plus.ipynb"  # Can timeout on Sphinx's builds
+]
+
 nb_execution_timeout = 60 * 20
 # nb_execution_raise_on_error = True
 nb_execution_show_tb = True
