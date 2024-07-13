@@ -1,0 +1,7 @@
+name: boa-paper
+channels:
+- pytorch
+- conda-forge
+dependencies:
+- python=3.10
+- boa-framework==0.10.3
