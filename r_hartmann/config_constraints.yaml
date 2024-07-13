@@ -1,7 +1,6 @@
 objective:
     metrics:
         -   name: Hartmann6
-        -   name: rmse
     outcome_constraints:
         - l2norm <= 1.25
 parameters:
@@ -27,7 +26,7 @@ parameter_constraints:
     - .5*x1 + x2 <= 1.5
 n_trials: 10
 script_options:
-    run_model: Rscript run_model.R
+    run_model: Rscript run_model_w_l2norm.R
 # generation_strategy:
 #     steps:
 #         -   model: SOBOL
