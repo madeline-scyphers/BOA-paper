@@ -3,11 +3,6 @@ objective:
     # This exact number will be used in our run_model.R script later
     metrics:
         - name: Hartmann6
-    # This is any additional constraint you want to optionally add to the optimization
-    # This often might be a black box constraint that you want to enforce
-    # Or a budget constraint that you want to enforce
-    outcome_constraints:
-        - l2norm <= 1.25
 parameters:
     # Parameters can be 3 types: range, fixed, or choice
     # with fixed being inferred if it is a single value (i.e. x1: 3)
@@ -31,10 +26,19 @@ parameters:
     x6:
         type: range
         bounds: [0.0, 1.0]
-parameter_constraints:
-    # Optional, list of constraints on the parameter space, these are linear constraints
-    - .5*x1 + x2 <= 1.5
-n_trials: 10
+#parameter_constraints:
+#    # Optional, list of constraints on the parameter space, these are linear constraints
+#    - .5*x1 + x2 <= 1.5
+n_trials: 50
+scheduler:
+    # Optional, this stops the optimization early if we converge to the specified condition
+    global_stopping_strategy:
+        type: improvement
+        min_trials: 20
+        window_size: 10
+        # (This is the default) 10% improvement as a fraction of the
+        # interquartile range (IQR) of the objective values seen so far.
+        improvement_bar: 0.1
 script_options:
     # This tells BOA what script from any language to run to evaluate the model
-    run_model: Rscript run_model_w_l2norm.R
+    run_model: Rscript run_model.R

@@ -1,16 +1,24 @@
+# This is jinja2 templating, which is a way to dynamically generate text files supported by BOA
 {% set n_trials = 10 %}
 objective:
+    # This is the metric(s) we are trying to optimize
+    # This exact number will be used in our run_model.R script later
     metrics:
         - name: Hartmann6
 parameters:
+    # Parameters can be 3 types: range, fixed, or choice
+    # with fixed being inferred if it is a single value (i.e. x1: 3)
+    # Parameters can be of type int, float, str, or bool
+    # and are inferred if not specified
     {% for i in range(6) %}
     x{{ i }}:
         type: range
         bounds: [0, 1]
         value_type: float
     {% endfor %}
+n_trials: {{ n_trials }}
 scheduler:
-    n_trials: {{ n_trials }}
+    # Optional, this stops the optimization early if we converge to the specified condition
     global_stopping_strategy:
         type: improvement
         min_trials: {{ n_trials // 4 }}
@@ -19,5 +27,7 @@ scheduler:
         # interquartile range (IQR) of the objective values seen so far.
         improvement_bar: 0.1
 script_options:
+    # This tells BOA what script from any language to run to evaluate the model
     run_model: Rscript run_model.R
+    # This tells BOA what to name the experiment, which then is used for the output directory
     exp_name: {{ config_dir_name }}_{{ n_trials }}_trials_w_stopping_strategy

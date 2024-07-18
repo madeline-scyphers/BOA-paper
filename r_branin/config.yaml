@@ -17,8 +17,16 @@ parameters:
         value_type: float
 
 # number of trials and other general run settings
+n_trials: 50
 scheduler:
-    n_trials: 15
+    # Optional, this stops the optimization early if we converge to the specified condition
+    global_stopping_strategy:
+        type: improvement
+        min_trials: 10
+        window_size: 10
+        # (This is the default) 10% improvement as a fraction of the
+        # interquartile range (IQR) of the objective values seen so far.
+        improvement_bar: 0.1
 
 # Which script to run and what to write files out as
 script_options:
