@@ -15,7 +15,7 @@
 
    Follow the instructions provided on the FETCH3.14 documentation pages to complete the installation. Detailed installation steps can be found on the [FETCH3.14 Docs](https://github.com/jemissik/fetch3_nhl).
 
-Install FETCH3.14 in this directory and run the following command to install the package:
+Install FETCH3.14 in this directory, move the `wwc_trees_2016.csv` into FETCH's data directory.
 
 ## Run Optimization
 
